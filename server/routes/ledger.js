@@ -64,3 +64,14 @@ router.get('/scores/:leagueId', async (req, res) => {
 });
 
 module.exports = router;
+
+router.post('/stripe/create-account', async (req, res) => {
+  // Placeholder for Stripe Connect account creation
+  // Implement serverless Stripe flow here
+  return res.status(200).json({ message: 'Stubbed Stripe account endpoint' });
+});
+
+router.post('/stripe/transfer', async (req, res) => {
+  // Placeholder for Stripe transfer handling
+  return res.status(200).json({ message: 'Stubbed Stripe transfer endpoint' });
+});

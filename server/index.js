@@ -7,6 +7,10 @@ require('dotenv').config();
 const leaguesRouter = require('./routes/leagues');
 const matchesRouter = require('./routes/matches');
 const ledgerRouter = require('./routes/ledger');
+const usersRouter = require('./routes/users');
+const teamsRouter = require('./routes/teams');
+const draftRouter = require('./routes/draft');
+const ruleTemplatesRouter = require('./routes/ruleTemplates');
 
 const app = express();
 const server = http.createServer(app);
@@ -18,6 +22,10 @@ app.use(express.json());
 app.use('/leagues', leaguesRouter);
 app.use('/matches', matchesRouter);
 app.use('/ledger', ledgerRouter);
+app.use('/users', usersRouter);
+app.use('/teams', teamsRouter);
+app.use('/draft', draftRouter);
+app.use('/rule-templates', ruleTemplatesRouter);
 
 app.get('/', (req, res) => res.json({ status: 'League Director API', version: '0.1.0' }));
 
